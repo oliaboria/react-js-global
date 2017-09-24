@@ -3,12 +3,19 @@ import styled from 'styled-components';
 
 import backgroundImg from '../../../assets/img/background.jpg';
 
-const HEADER_CONTAINER = styled.header`
-    height: 350px;
-    width: 100%;
+import { Logo } from '../logo';
+import { Search } from '../search/search';
+
+const HeaderContainer = styled.header`
+    height: 300px;
     background-image: url(${backgroundImg});
-    background-color: grey;
+    background-color: #606060;
     background-blend-mode: multiply;
+    padding: 20px 80px;
+`;
+
+const LogoWrapper = styled.div`
+    margin-bottom: 55px;
 `;
 
 const INPUT = styled.input`
@@ -19,8 +26,12 @@ const INPUT = styled.input`
 export class Header extends React.Component {
     render() {
         return (
-            <HEADER_CONTAINER>
-            </HEADER_CONTAINER>
+            <HeaderContainer>
+                <LogoWrapper>
+                    <Logo/ >
+                </LogoWrapper>
+                <Search />
+            </HeaderContainer>
         );
     } 
 }
