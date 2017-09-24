@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { GREY, PINK, WHITE } from '../../constants/colors';
 import { SearchFilterList } from './searchFilterList';
+import { Button } from '../button';
 
 const SeacrhHeader = styled.h1`
     color: ${ WHITE };
@@ -37,6 +38,13 @@ const SearchInput = styled.input`
     margin-bottom: 30px;
 `;
 
+const SearchButton = Button.extend`
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+    padding: 1rem 3rem;
+`;
+
 export class Search extends React.Component {
     render() {
         return (
@@ -45,6 +53,7 @@ export class Search extends React.Component {
                 <SearchForm>
                     <SearchInput />
                     <SearchFilterList />
+                    <SearchButton primary>SEARCH</SearchButton>
                 </SearchForm>
             </div>
         );
