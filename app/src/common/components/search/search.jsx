@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { GREY, PINK, WHITE } from '../../constants/colors.js';
+import { GREY, PINK, WHITE } from '../../constants/colors';
+import { SearchFilterList } from './searchFilterList';
 
 const SeacrhHeader = styled.h1`
     color: ${ WHITE };
@@ -9,7 +10,7 @@ const SeacrhHeader = styled.h1`
     font-weight: 100;
 `;
 
-const InputWrapper = styled.div`
+const SearchForm = styled.form`
     position: relative;
     margin-top: 25px;
 
@@ -33,6 +34,7 @@ const SearchInput = styled.input`
     border: none;
     border-bottom: 2px solid ${ PINK };
     outline: none;
+    margin-bottom: 30px;
 `;
 
 export class Search extends React.Component {
@@ -40,7 +42,10 @@ export class Search extends React.Component {
         return (
             <div>
                 <SeacrhHeader>FIND YOUR MOVIE</SeacrhHeader>
-                <InputWrapper><SearchInput /></InputWrapper>
+                <SearchForm>
+                    <SearchInput />
+                    <SearchFilterList />
+                </SearchForm>
             </div>
         );
     } 
