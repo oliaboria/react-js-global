@@ -13,8 +13,10 @@ export class MoviesList extends React.Component {
     constructor(props) {
         super(props);
 
+        this.movies = this.props.movies;
+
         this.state = {
-            hasMovies: !!this.props.movies.length
+            hasMovies: !!this.movies.length
         }
     }
 
@@ -22,7 +24,7 @@ export class MoviesList extends React.Component {
         let content = [];
 
         if (this.state.hasMovies) {
-            content = this.props.movies.map((movie) => {
+            content = this.movies.map((movie) => {
                 return <MoviePreview movie={ movie } key={ movie.showId }/>
             });
         } else {

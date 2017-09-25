@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { GREY } from '../../constants/colors';
@@ -12,6 +13,12 @@ const MovieWrapper = styled.div`
         width: 285px;
         margin: 0 auto;
     }
+`;
+
+const MovieLink = styled(Link)`
+    text-decoration: none;
+    cursor: default;
+    color: black;
 `;
 
 const MovieImg = styled.img`
@@ -54,13 +61,15 @@ export class MoviePreview extends React.Component {
     render() {
         return (
            <MovieWrapper>
-                <div>
-                    <MovieImg src={this.props.movie.poster}/>
-                    <MovieInfWrapper>
-                        <MovieTitle>{this.props.movie.showTitle}</MovieTitle>
-                        <MovieRealiseDate>{this.props.movie.releaseYear}</MovieRealiseDate>
-                    </MovieInfWrapper>
-                    <MovieCategory>{this.props.movie.category}</MovieCategory>
+               <div>
+                    <MovieLink to={`/movie/${this.props.movie.showId}`}>
+                        <MovieImg />
+                        <MovieInfWrapper>
+                            <MovieTitle>{this.props.movie.showTitle}</MovieTitle>
+                            <MovieRealiseDate>{this.props.movie.releaseYear}</MovieRealiseDate>
+                        </MovieInfWrapper>
+                        <MovieCategory>{this.props.movie.category}</MovieCategory>
+                    </MovieLink>
                 </div>
            </MovieWrapper>
         );

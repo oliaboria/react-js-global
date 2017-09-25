@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { DARK_GREY } from '../../constants/colors';
 import { SIDE_PADDING } from '../../constants/dimensions';
-import { Logo } from '../logo';
+import { Logo } from '../logo/logo';
 
 const FooterContainer = styled.div`
     position: absolute;

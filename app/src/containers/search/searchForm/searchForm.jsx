@@ -5,13 +5,13 @@ import { Button } from '../../../common/components/button';
 import { GREY, PINK, WHITE } from '../../../common/constants/colors';
 import { SearchFilter } from './searchFilter';
 
-const SeacrhHeader = styled.h1`
+const FormTitle = styled.h1`
     color: ${ WHITE };
     font-size: 1.3rem;
     font-weight: 100;
 `;
 
-const SearchForm = styled.form`
+const Form = styled.form`
     position: relative;
     margin-top: 25px;
 
@@ -45,16 +45,16 @@ const SearchButton = Button.extend`
     padding: .8rem 5rem;
 `;
 
-export class Search extends React.Component {
+export class SearchForm extends React.Component {
     render() {
         return (
             <div>
-                <SeacrhHeader>FIND YOUR MOVIE</SeacrhHeader>
-                <SearchForm>
+                <FormTitle>FIND YOUR MOVIE</FormTitle>
+                <Form>
                     <SearchInput />
                     <SearchFilter />
                     <SearchButton primary>SEARCH</SearchButton>
-                </SearchForm>
+                </Form>
             </div>
         );
     } 

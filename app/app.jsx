@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
 import './index.css';
 import movies from './src/containers/moviesList/mockedMovies';
-import { MoviesList } from './src/containers/moviesList/moviesList';
-import { Header } from './src/common/components/header/header';
+import { NoFilmsFound } from './src/containers/search/noFilmsFound/noFilmsFound';
 import { Footer } from './src/common/components/footer/footer';
 
 const Wrapper = styled.div`
@@ -19,19 +19,17 @@ const Wrapper = styled.div`
     }
 `;
 
-const ContentWrapper = styled.div`
-    display: flex;
-    padding: 40px;
-`;
-
-class App extends React.Component {
+export class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                <Header moviesLength={ movies.length }/> 
-                <ContentWrapper> 
-                    <MoviesList movies={ movies } />
-                </ContentWrapper>
+                <BrowserRouter >
+                    <Switch>
+                        <Route exact path='/' component={ NoFilmsFound } />
+                        {/* <Route path='/search/:query' component={ Search } /> */}
+                        {/* <Route path='/film/:title' component={ Movie } /> */}
+                    </Switch>
+                </BrowserRouter>
                 <Footer />
             </Wrapper>
         );

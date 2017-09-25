@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PINK } from '../constants/colors';
+import { PINK } from '../../constants/colors';
 
 const LogoText = styled.span`
     color: ${ PINK };
