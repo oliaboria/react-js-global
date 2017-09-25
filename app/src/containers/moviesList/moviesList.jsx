@@ -23,7 +23,7 @@ export class MoviesList extends React.Component {
 
         if (this.state.hasMovies) {
             content = this.props.movies.map((movie) => {
-                return <MoviePreview movie={movie} key={movie.showId}/>
+                return <MoviePreview movie={ movie } key={ movie.showId }/>
             });
         } else {
             content = [<NoFilmsFound />];

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { Button } from '../../../common/components/button';
 import { GREY, PINK, WHITE } from '../../../common/constants/colors';
-import { SearchFilterList } from './searchFilterList';
+import { SearchFilter } from './searchFilter';
 
 const SeacrhHeader = styled.h1`
     color: ${ WHITE };
@@ -52,7 +52,7 @@ export class Search extends React.Component {
                 <SeacrhHeader>FIND YOUR MOVIE</SeacrhHeader>
                 <SearchForm>
                     <SearchInput />
-                    <SearchFilterList />
+                    <SearchFilter />
                     <SearchButton primary>SEARCH</SearchButton>
                 </SearchForm>
             </div>

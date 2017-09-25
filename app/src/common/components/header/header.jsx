@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 import backgroundImg from '../../../assets/img/background.jpg';
 
+import { MoviesToolbar } from '../../../containers/moviesList/moviesToolbar/moviesToolbar';
 import { Search } from '../../../containers/moviesList/search/search';
 import { LIGHT_GREY } from '../../constants/colors';
+import { SIDE_PADDING } from '../../constants/dimensions';
 import { Logo } from '../logo';
 
 const HeaderWrapper = styled.div``;
@@ -14,7 +16,7 @@ const HeaderContainer = styled.header`
     background-image: url(${ backgroundImg });
     background-color: #606060;
     background-blend-mode: multiply;
-    padding: 20px 80px;
+    padding: 20px ${ SIDE_PADDING };
 `;
 
 const LogoWrapper = styled.div`
@@ -36,7 +38,9 @@ export class Header extends React.Component {
                     </LogoWrapper>
                     <Search />
                 </HeaderContainer>
-                <ToolbarWrapper></ToolbarWrapper>
+                <ToolbarWrapper>
+                    <MoviesToolbar moviesLength={ this.props.moviesLength }/>
+                </ToolbarWrapper>
             </HeaderWrapper>
         );
     } 

@@ -28,12 +28,12 @@ class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                <Header /> 
+                <Header moviesLength={ movies.length }/> 
                 <ContentWrapper> 
-                    <MoviesList movies={movies}/>
+                    <MoviesList movies={ movies } />
                 </ContentWrapper>
                 <Footer />
-            </Wrapper>     
+            </Wrapper>
         );
     }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { DARK_GREY } from '../../constants/colors';
+import { SIDE_PADDING } from '../../constants/dimensions';
 import { Logo } from '../logo';
 
 const FooterContainer = styled.div`
@@ -14,7 +15,7 @@ const FooterContainer = styled.div`
     
     span {
         display: inline-block;
-        padding: 9px 80px;
+        padding: 9px ${ SIDE_PADDING };
     }
 `;
 
