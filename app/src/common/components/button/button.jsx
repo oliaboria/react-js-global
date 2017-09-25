@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { PINK, WHITE } from '../constants/colors';
+import { PINK, WHITE } from '../../constants/colors';
 
 export const Button = styled.button`
     margin: 1rem;
@@ -10,4 +10,6 @@ export const Button = styled.button`
     background-color: ${ props => props.primary ? PINK : WHITE };
     color: ${ props => props.primary ? WHITE : PINK };
     font-size: 14px;
+    outline: none;
+    cursor: pointer;
 `;

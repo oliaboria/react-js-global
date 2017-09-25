@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
 import './index.css';
-import movies from './src/containers/moviesList/mockedMovies';
-import { NoFilmsFound } from './src/containers/search/noFilmsFound/noFilmsFound';
 import { Footer } from './src/common/components/footer/footer';
+import { Movie } from './src/containers/movie/movie';
+import { NoFilmsFound } from './src/containers/noFilmsFound/noFilmsFound';
+import { Search } from './src/containers/search/search';
 
 const Wrapper = styled.div`
     min-height: 100%;
@@ -23,17 +24,20 @@ export class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                <BrowserRouter >
                     <Switch>
-                        <Route exact path='/' component={ NoFilmsFound } />
-                        {/* <Route path='/search/:query' component={ Search } /> */}
-                        {/* <Route path='/film/:title' component={ Movie } /> */}
+                        {/* <Route path='/' component={ NoFilmsFound } /> */}
+                        <Route path='/' component={ Movie } />
+                        <Route path='/search/:query' component={ Search } />
+                        <Route path='/film/:title' component={ Movie } />
                     </Switch>
-                </BrowserRouter>
                 <Footer />
             </Wrapper>
         );
     }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+), document.getElementById('root'))

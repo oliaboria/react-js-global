@@ -21,7 +21,7 @@ const MovieLink = styled(Link)`
     color: black;
 `;
 
-const MovieImg = styled.img`
+export const MovieImg = styled.img`
     width: 285px;
     height: 405px;
 `;
@@ -62,8 +62,8 @@ export class MoviePreview extends React.Component {
         return (
            <MovieWrapper>
                <div>
-                    <MovieLink to={`/movie/${this.props.movie.showId}`}>
-                        <MovieImg />
+                    <MovieLink to={`/movie/${ this.props.movie.showId }`}>
+                        <MovieImg src={ this.props.movie.poster }/>
                         <MovieInfWrapper>
                             <MovieTitle>{this.props.movie.showTitle}</MovieTitle>
                             <MovieRealiseDate>{this.props.movie.releaseYear}</MovieRealiseDate>

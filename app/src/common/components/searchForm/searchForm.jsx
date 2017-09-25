@@ -1,8 +1,9 @@
+import createHistory from 'history/createBrowserHistory';
 import React from 'react';
 import styled from 'styled-components';
 
-import { Button } from '../../../common/components/button';
-import { GREY, PINK, WHITE } from '../../../common/constants/colors';
+import { Button } from '../button/button';
+import { GREY, PINK, WHITE } from '../../constants/colors';
 import { SearchFilter } from './searchFilter';
 
 const FormTitle = styled.h1`
@@ -46,14 +47,30 @@ const SearchButton = Button.extend`
 `;
 
 export class SearchForm extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            query: ''
+        };
+        this.history = createHistory();
+    }
+
+    submit = () => {
+        this.history.push(`/search/${ this.state.query }/`);
+    }
+
+    inputChange = (event) => {
+        this.setState({ query: event.target.value });
+    }
+
     render() {
         return (
             <div>
                 <FormTitle>FIND YOUR MOVIE</FormTitle>
-                <Form>
-                    <SearchInput />
+                <Form onSubmit={ this.submit }>
+                    <SearchInput onChange={ this.inputChange }/>
                     <SearchFilter />
-                    <SearchButton primary>SEARCH</SearchButton>
+                    <SearchButton primary type='submit'>SEARCH</SearchButton>
                 </Form>
             </div>
         );

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { RadioFilterList } from '../../../common/components/radioFilterList/radioFilterList';
-import { DARK_GREY, PINK, WHITE } from '../../../common/constants/colors';
+import { RadioFilterList } from '../radioFilterList/radioFilterList';
+import { DARK_GREY, PINK, WHITE } from '../../constants/colors';
 
 const StyledFilter = styled.div`
     .title {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ContentContainer } from '../../../common/components/contentContainer/contentContainer';
-import { SearchHeader } from '../searchHeader/searchHeader';
+import { ContentContainer } from '../../common/components/contentContainer/contentContainer';
+import { SearchHeader } from './searchHeader/searchHeader';
 
 const NoFilms = styled.div`
     color: #A9A9A9;

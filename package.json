@@ -20,6 +20,7 @@
   "homepage": "https://github.com/oliaboria/react-js-global#readme",
   "dependencies": {
     "express": "^4.15.4",
+    "history": "^4.7.2",
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
