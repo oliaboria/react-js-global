@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 import backgroundImg from '../../../assets/img/background.jpg';
 
-import { Search } from '../../../containers/moviesList/search/search.jsx';
+import { Search } from '../../../containers/moviesList/search/search';
+import { LIGHT_GREY } from '../../constants/colors';
 import { Logo } from '../logo';
 
+const HeaderWrapper = styled.div``;
+
 const HeaderContainer = styled.header`
-    height: 300px;
+    height: 260px;
     background-image: url(${ backgroundImg });
     background-color: #606060;
     background-blend-mode: multiply;
@@ -19,19 +22,22 @@ const LogoWrapper = styled.div`
 `;
 
 const ToolbarWrapper = styled.div`
-    height: 100px;
-    background-color: 
+    height: 40px;
+    background-color: ${ LIGHT_GREY };
 `;
 
 export class Header extends React.Component {
     render() {
         return (
-            <HeaderContainer>
-                <LogoWrapper>
-                    <Logo/ >
-                </LogoWrapper>
-                <Search />
-            </HeaderContainer>
+            <HeaderWrapper>
+                <HeaderContainer>
+                    <LogoWrapper>
+                        <Logo/ >
+                    </LogoWrapper>
+                    <Search />
+                </HeaderContainer>
+                <ToolbarWrapper></ToolbarWrapper>
+            </HeaderWrapper>
         );
     } 
 }
