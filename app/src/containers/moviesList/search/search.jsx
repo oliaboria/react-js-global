@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { GREY, PINK, WHITE } from '../../constants/colors';
+import { Button } from '../../../common/components/button';
+import { GREY, PINK, WHITE } from '../../../common/constants/colors';
 import { SearchFilterList } from './searchFilterList';
-import { Button } from '../button';
 
 const SeacrhHeader = styled.h1`
     color: ${ WHITE };
@@ -42,7 +42,7 @@ const SearchButton = Button.extend`
     position: absolute;
     right: 0;
     bottom: -25px;
-    padding: 1rem 3rem;
+    padding: .8rem 5rem;
 `;
 
 export class Search extends React.Component {

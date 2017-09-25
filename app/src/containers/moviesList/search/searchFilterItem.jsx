@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { DARK_GREY, PINK, WHITE } from '../../constants/colors.js';
+import { DARK_GREY, PINK, WHITE } from '../../../common/constants/colors';
 
 const RadioWrapper = styled.div`
     color: ${ WHITE };

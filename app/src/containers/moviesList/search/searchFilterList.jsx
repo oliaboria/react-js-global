@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { GREY, PINK, WHITE } from '../../constants/colors';
+import { GREY, PINK, WHITE } from '../../../common/constants/colors';
 import { SearchFilterItem } from './searchFilterItem';
 
 const FILTER_NAMES = [ 'Title', 'Director' ];
