@@ -14,7 +14,7 @@ export const HeaderContainer = styled.header`
     background-image: url(${ backgroundImg });
     background-color: #606060;
     background-blend-mode: multiply;
-    padding: 20px ${ SIDE_PADDING };
+    padding: 2vw ${ SIDE_PADDING };
 `;
 
 export const LogoWrapper = styled.div`

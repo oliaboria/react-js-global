@@ -1,1 +1,1 @@
-export const SIDE_PADDING = '80px';
+export const SIDE_PADDING = '6vw';
