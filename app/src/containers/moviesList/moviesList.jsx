@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Header } from '../../common/components/header/header'
+import { NoFilmsFound } from './noFilmsFound/noFilmsFound';
 
 export class MoviesList extends React.Component {
     render() {
         return (
-            <span>lalal</span>
+            <NoFilmsFound />
         );
     } 
 }

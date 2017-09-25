@@ -12,15 +12,20 @@ const Wrapper = styled.div`
     position: relative;
 `;
 
+const ContentWrapper = styled.div`
+    display: flex;
+`;
+
 class App extends React.Component {
     render() {
         return (
             <Wrapper>
                 <Header /> 
-                <MoviesList />
+                <ContentWrapper> 
+                    <MoviesList />
+                </ContentWrapper>
                 <Footer />
-            </Wrapper>
-               
+            </Wrapper>     
         );
     }
 }
