@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
+import history from './src/utils/history';
 
 import './index.css';
 import { Footer } from './src/common/components/footer/footer';
@@ -24,20 +25,18 @@ export class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                    <Switch>
-                        {/* <Route path='/' component={ NoFilmsFound } /> */}
-                        <Route path='/' component={ Movie } />
-                        <Route path='/search/:query' component={ Search } />
-                        <Route path='/film/:title' component={ Movie } />
-                    </Switch>
+                    <Router history={ history }>
+                        <Switch>
+                            <Route path='/' exact component={ NoFilmsFound } />
+                            <Route path='/search/:query' component={ Search } />
+                            <Route path='/film/:title' component={ Movie } />
+                            <Route path='*' component={ NoFilmsFound } />
+                        </Switch>
+                    </Router>
                 <Footer />
             </Wrapper>
         );
     }
 }
 
-ReactDOM.render((
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-), document.getElementById('root'))
+ReactDOM.render((<App />), document.getElementById('root'))

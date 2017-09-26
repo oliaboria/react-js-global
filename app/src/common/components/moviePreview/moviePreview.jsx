@@ -62,7 +62,7 @@ export class MoviePreview extends React.Component {
         return (
            <MovieWrapper>
                <div>
-                    <MovieLink to={`/movie/${ this.props.movie.showId }`}>
+                    <MovieLink to={`/film/${ this.props.movie.showId }`}>
                         <MovieImg src={ this.props.movie.poster }/>
                         <MovieInfWrapper>
                             <MovieTitle>{this.props.movie.showTitle}</MovieTitle>

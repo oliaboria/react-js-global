@@ -1,4 +1,4 @@
-import createHistory from 'history/createBrowserHistory';
+import history from '../../../utils/history';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -52,11 +52,14 @@ export class SearchForm extends React.Component {
         this.state = {
             query: ''
         };
-        this.history = createHistory();
     }
 
-    submit = () => {
-        this.history.push(`/search/${ this.state.query }/`);
+    submit = (e) => {
+        if (this.state.query) {
+            history.push(`/search/${ this.state.query }/`);
+        }
+        
+        e.preventDefault();
     }
 
     inputChange = (event) => {
