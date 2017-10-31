@@ -10,9 +10,7 @@ const MoviesListWrapper = styled.div`
 
 export class MoviesList extends React.Component {
     render() {
-        let content = [];
-
-        content = this.props.movies.map((movie) => {
+        const content = this.props.movies.map((movie) => {
             return <MoviePreview movie={ movie } key={ movie.showId }/>
         });
 
