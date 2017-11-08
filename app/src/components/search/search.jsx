@@ -7,20 +7,28 @@ import movies from './mockedMovies';
 import { SearchHeader } from './searchHeader/searchHeader';
 
 export class Search extends React.Component {
-    constructor(){
-        super();
+    componentWillMount() {
+        this.getMovies(this.props.match.params.query);
 
-        this.state = {
-            movies: movies
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.getMovies(nextProps.match.params.query);
+    }
+
+    getMovies(query) {
+        if (this.query !== query) {
+            this.query = query;
+            this.props.searchAction.fetchMoviesByName(this.query);
         }
     }
 
     render() {
         return (
             <div>
-                <SearchHeader moviesNumber={ this.state.movies.length } />
+                <SearchHeader moviesNumber={ this.props.movies.foundedMovies.length } />
                 <ContentContainer>
-                    <MoviesList movies={ this.state.movies } />
+                    <MoviesList movies={ this.props.movies.foundedMovies } />
                 </ContentContainer>
             </div>
         );
