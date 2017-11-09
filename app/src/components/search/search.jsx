@@ -9,7 +9,6 @@ import { SearchHeader } from './searchHeader/searchHeader';
 export class Search extends React.Component {
     componentWillMount() {
         this.getMovies(this.props.match.params.query);
-
     }
 
     componentWillReceiveProps(nextProps) {

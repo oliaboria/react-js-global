@@ -8,8 +8,8 @@ import history from './src/utils/history';
 import './index.css';
 import { configureStore } from './src/store/configureStore';
 import { Footer } from './src/common/components/footer/footer';
-import { Movie } from './src/components/movie/movie';
 import { NoFilmsFound } from './src/components/noFilmsFound/noFilmsFound';
+import Movie from './src/containers/movie';
 import Search from './src/containers/search';
 
 const store = configureStore();
@@ -34,7 +34,7 @@ export class App extends React.Component {
                             <Switch>
                                 <Route path='/' exact component={ NoFilmsFound } />
                                 <Route path='/search/:query' component={ Search } />
-                                <Route path='/film/:title' component={ Movie } />
+                                <Route path='/film/:id' component={ Movie } />
                                 <Route path='*' component={ NoFilmsFound } />
                             </Switch>
                         </Router>

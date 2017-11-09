@@ -5,16 +5,16 @@ import * as searchActions from '../actions/SearchActions';
 import { Search } from '../components/search/search';
 
 function mapStateToProps(state) {
-  return {
-      movies: state.searchMovies.foundedMovies,
-      sortBy: state.searchMovies.sort
-  };
+    return {
+        movies: state.searchMovies.foundedMovies,
+        sortBy: state.searchMovies.sort
+    };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-      searchAction: bindActionCreators(searchActions, dispatch)
-  };
+    return {
+        searchAction: bindActionCreators(searchActions, dispatch)
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -36,7 +36,7 @@ export class MovieHeader extends React.Component {
                     <MovieDetails movie={ this.props.movie } />
                 </HeaderContainer>
                 <ToolbarWrapper>
-                    Films by { this.props.movie.director }
+                    Films by { this.props.movie.companies }
                 </ToolbarWrapper>
             </HeaderWrapper>
         );

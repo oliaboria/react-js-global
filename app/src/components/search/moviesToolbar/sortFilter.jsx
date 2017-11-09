@@ -15,7 +15,6 @@ const StyledFilter = styled.div`
 export class SortFilter extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
         this.state = {
             filter: [ 'release date', 'rating' ],
             selected: null

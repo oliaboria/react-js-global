@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { IMG_URL } from '../../../common/config/api';
 import { MovieImg } from '../../../common/components/moviePreview/moviePreview';
 import { GREY, PINK, WHITE } from '../../../common/constants/colors';
 
@@ -68,7 +69,7 @@ export class MovieDetails extends React.Component {
         return (
             <MovieWrapper>
                 <ImgWrapper>
-                    <MovieImg src={ this.props.movie.poster }/>
+                    <MovieImg src={ `${IMG_URL}${this.props.movie.poster}` }/>
                 </ImgWrapper>
                 <DetailsWrapper>
                     <FilmTitleWrapper>
@@ -83,8 +84,8 @@ export class MovieDetails extends React.Component {
                     <Paragraph>
                         { this.props.movie.summary }
                     </Paragraph>
-                    <Paragraph>Director: { this.props.movie.director }</Paragraph>
-                    <Paragraph>Cast: { this.props.movie.showCast }</Paragraph>
+                    <Paragraph>Prodaction companies: { this.props.movie.companies }</Paragraph>
+                    <Paragraph>Tagline: { this.props.movie.tagline }</Paragraph>
                 </DetailsWrapper>
             </MovieWrapper>
         );
