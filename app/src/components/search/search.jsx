@@ -26,9 +26,11 @@ export class Search extends React.Component {
     render() {
         return (
             <div>
-                <SearchHeader moviesNumber={ this.props.movies.foundedMovies.length } />
+                <SearchHeader moviesNumber={ this.props.movies.length } 
+                              selectedSort={ this.props.sort }
+                              sortAction={ this.props.searchAction.sortMovies }/>
                 <ContentContainer>
-                    <MoviesList movies={ this.props.movies.foundedMovies } />
+                    <MoviesList movies={ this.props.movies } />
                 </ContentContainer>
             </div>
         );

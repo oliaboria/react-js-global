@@ -23,7 +23,8 @@ export class MoviesToolbar extends React.Component {
         return (
             <ToolbarContainer>
                 <MoviesNumber>{ this.props.moviesNumber } movies found</MoviesNumber>
-                <SortFilter />
+                <SortFilter selected={ this.props.selectedSort }
+                            sortFunc={ this.props.sortAction }/>
             </ToolbarContainer>
         );
     } 

@@ -13,17 +13,20 @@ const StyledFilter = styled.div`
 `;
 
 export class SortFilter extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        console.log(this.props)
         this.state = {
             filter: [ 'release date', 'rating' ],
-            selected: 'release date'
+            selected: null
         };
     }
 
-    hanleFilterChange =  (changeEvent) => {
+    hanleFilterChange = (changeEvent) => {
+        const selected = changeEvent.target.value;
+        this.props.sortFunc(selected);
         this.setState({
-            selected: changeEvent.target.value
+            selected: selected
         });
     }
 

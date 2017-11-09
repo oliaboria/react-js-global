@@ -6,7 +6,8 @@ import { Search } from '../components/search/search';
 
 function mapStateToProps(state) {
   return {
-    movies: state.searchMovies
+      movies: state.searchMovies.foundedMovies,
+      sortBy: state.searchMovies.sort
   };
 }
 

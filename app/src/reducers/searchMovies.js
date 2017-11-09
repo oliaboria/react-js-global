@@ -5,7 +5,8 @@ import {
 } from '../common/constants/actions';
 
 const initialState = {
-    foundedMovies: []
+    foundedMovies: [],
+    sort: 'releaseYear'
 };
   
 function handleMovies(movies) {
@@ -21,7 +22,7 @@ function handleMovies(movies) {
 function sortMovies(movies, sortType) {
     const sortedMovies = [...movies];
     const propsBySortType = {
-      date: 'releaseYear',
+      'release date': 'releaseYear',
       rating: 'rating',
     };
 
@@ -38,7 +39,10 @@ function sortMovies(movies, sortType) {
         case FETCH_MOVIES_ERROR:
             return state;
         case SORT_MOVIES:
-            return Object.assign({}, state, { foundedMovies: sortMovies(action.payload) });
+            return Object.assign({}, state, { 
+                foundedMovies: sortMovies(state.foundedMovies, action.payload),
+                sort: action.payload
+            });
         default:
             return state;
     }
