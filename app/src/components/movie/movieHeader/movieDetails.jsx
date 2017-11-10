@@ -77,14 +77,14 @@ export class MovieDetails extends React.Component {
                     </FilmTitleWrapper>
                     <Category>{ this.props.movie.category}</Category>
                     <TimeframeWrapper>
-                        <Year>{ this.props.movie.releaseYear }</Year>
+                        { this.props.movie.releaseYear ?  <Year>{ this.props.movie.releaseYear }</Year> : null }
                         <Duration>{ this.props.movie.runtime }</Duration>
                     </TimeframeWrapper>
                     <Paragraph>
                         { this.props.movie.summary }
                     </Paragraph>
-                    <Paragraph>Director: { this.props.movie.director }</Paragraph>
-                    <Paragraph>Cast: { this.props.movie.showCast }</Paragraph>
+                    <Paragraph>Prodaction companies: { this.props.movie.companies }</Paragraph>
+                    <Paragraph>Tagline: { this.props.movie.tagline }</Paragraph>
                 </DetailsWrapper>
             </MovieWrapper>
         );

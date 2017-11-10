@@ -15,7 +15,9 @@ export class SearchHeader extends React.Component {
             <HeaderWrapper>
                 <LogoWithSearchHeader />
                 <ToolbarWrapper>
-                    <MoviesToolbar moviesNumber={ this.props.moviesNumber } />
+                    <MoviesToolbar moviesNumber={ this.props.moviesNumber } 
+                                   selectedSort={ this.props.selectedSort }
+                                   sortAction={ this.props.sortAction }/>
                 </ToolbarWrapper>
             </HeaderWrapper>
         );

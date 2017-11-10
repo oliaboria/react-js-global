@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { IMG_URL } from '../../config/api';
 import { GREY } from '../../constants/colors';
 
 const MovieWrapper = styled.div`
@@ -40,6 +41,7 @@ const MovieTitle = styled.span`
     text-transform: uppercase;
     float: left;
     line-height: 22px;
+    max-width: 240px;
 `;
 
 const MovieRealiseDate = styled.span`
@@ -65,10 +67,10 @@ export class MoviePreview extends React.Component {
                     <MovieLink to={`/film/${ this.props.movie.showId }`}>
                         <MovieImg src={ this.props.movie.poster }/>
                         <MovieInfWrapper>
-                            <MovieTitle>{this.props.movie.showTitle}</MovieTitle>
-                            <MovieRealiseDate>{this.props.movie.releaseYear}</MovieRealiseDate>
+                            <MovieTitle>{ this.props.movie.showTitle }</MovieTitle>
+                            { this.props.movie.releaseYear ? <MovieRealiseDate>{ this.props.movie.releaseYear }</MovieRealiseDate> : null }
                         </MovieInfWrapper>
-                        <MovieCategory>{this.props.movie.category}</MovieCategory>
+                        <MovieCategory>{ this.props.movie.category }</MovieCategory>
                     </MovieLink>
                 </div>
            </MovieWrapper>
