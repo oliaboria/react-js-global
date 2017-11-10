@@ -1,6 +1,5 @@
-import { Provider } from 'react-redux';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 import history from './src/utils/history';
@@ -44,5 +43,3 @@ export class App extends React.Component {
         );
     }
 }
-
-ReactDOM.render((<App />), document.getElementById('root'))

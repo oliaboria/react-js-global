@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node app/server/server.js"
+    "server": "babel-node app/server/server.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "styled-components": "^2.1.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
