@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { IMG_URL } from '../../../common/config/api';
 import { MovieImg } from '../../../common/components/moviePreview/moviePreview';
 import { GREY, PINK, WHITE } from '../../../common/constants/colors';
 
@@ -69,7 +68,7 @@ export class MovieDetails extends React.Component {
         return (
             <MovieWrapper>
                 <ImgWrapper>
-                    <MovieImg src={ `${IMG_URL}${this.props.movie.poster}` }/>
+                    <MovieImg src={ this.props.movie.poster }/>
                 </ImgWrapper>
                 <DetailsWrapper>
                     <FilmTitleWrapper>
@@ -78,7 +77,7 @@ export class MovieDetails extends React.Component {
                     </FilmTitleWrapper>
                     <Category>{ this.props.movie.category}</Category>
                     <TimeframeWrapper>
-                        <Year>{ this.props.movie.releaseYear }</Year>
+                        { this.props.movie.releaseYear ?  <Year>{ this.props.movie.releaseYear }</Year> : null }
                         <Duration>{ this.props.movie.runtime }</Duration>
                     </TimeframeWrapper>
                     <Paragraph>

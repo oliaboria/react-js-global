@@ -65,10 +65,10 @@ export class MoviePreview extends React.Component {
            <MovieWrapper>
                <div>
                     <MovieLink to={`/film/${ this.props.movie.showId }`}>
-                        <MovieImg src={ `${ IMG_URL }${ this.props.movie.poster }` }/>
+                        <MovieImg src={ this.props.movie.poster }/>
                         <MovieInfWrapper>
                             <MovieTitle>{ this.props.movie.showTitle }</MovieTitle>
-                            <MovieRealiseDate>{ this.props.movie.releaseYear }</MovieRealiseDate>
+                            { this.props.movie.releaseYear ? <MovieRealiseDate>{ this.props.movie.releaseYear }</MovieRealiseDate> : null }
                         </MovieInfWrapper>
                         <MovieCategory>{ this.props.movie.category }</MovieCategory>
                     </MovieLink>

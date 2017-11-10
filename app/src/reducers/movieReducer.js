@@ -1,3 +1,9 @@
+import { 
+    IMG_URL
+} from '../common/config/api';
+
+import imgNotFound from '../assets/img/no_img_found.png';
+
 import {
     FETCH_MOVIE_SUCCESS,
     FETCH_MOVIE_ERROR
@@ -11,21 +17,14 @@ function handleMovie(movie) {
     return {
         showId: movie.id,
         showTitle: movie.title,
-        poster: movie.poster_path,
+        poster: movie.poster_path ? `${IMG_URL}${movie.poster_path}` : imgNotFound,
         rating: movie.vote_average,
-        releaseYear: new Date(movie.release_date).getFullYear(),
+        releaseYear: movie.release_date ? new Date(movie.release_date).getFullYear() : '',
         runtime: movie.runtime,
         summary: movie.overview,
         tagline: movie.tagline,
-        category: movie.genres.reduce((res, genre) => res + ' ' + genre.name, ''),
-        companies: movie.production_companies.reduce(
-            (res, company, index, arr) => {
-                if (index === arr.length - 1) {
-                    return res + company.name;
-                } else {
-                    return res + company.name + ', '
-                }
-            }, '')
+        category: movie.genres.map(genre => genre.name).join(' '),
+        companies: movie.production_companies.map(company => company.name).join(', ')
     };
 }
 
