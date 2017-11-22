@@ -11,7 +11,6 @@ import {
 import { Button } from '../../../common/components/button/button';
 import { Logo } from '../../../common/components/logo/logo';
 import { MovieDetails } from './movieDetails';
-import history from '../../../utils/history';
 
 const SearchButton = Button.extend`
     padding: .5rem 2rem;
@@ -22,7 +21,7 @@ const SearchButton = Button.extend`
 
 export class MovieHeader extends React.Component {
     goToSearch = () => {
-        history.push(`/`);
+        this.props.history.push(`/`);
     }
 
     render() {

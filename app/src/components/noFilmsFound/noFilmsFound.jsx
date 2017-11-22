@@ -15,7 +15,7 @@ export class NoFilmsFound extends React.Component {
     render() {
         return (
             <div>
-                <SearchHeader />
+                <SearchHeader history={ this.props.history }/>
                 <ContentContainer>
                     <NoFilms>No films found</NoFilms>
                 </ContentContainer>

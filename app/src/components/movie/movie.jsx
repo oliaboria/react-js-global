@@ -32,7 +32,7 @@ export class Movie extends React.Component {
 
         return (
             <div>
-                <MovieHeader movie={ this.props.movie }/>
+                <MovieHeader movie={ this.props.movie } history={ this.props.history }/>
                 <ContentContainer>
                     <MoviesList movies={ this.props.movies } />
                 </ContentContainer>
