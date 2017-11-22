@@ -2,7 +2,7 @@ import {
     IMG_URL
 } from '../common/config/api';
 
-import imgNotFound from '../assets/img/no_img_found.png';
+// import imgNotFound from '../assets/img/no_img_found.png';
 
 import {
     FETCH_MOVIES_SUCCESS,
@@ -21,7 +21,7 @@ function handleMovies(movies) {
         showTitle: movie.title,
         releaseYear: movie.release_date ? new Date(movie.release_date).getFullYear() : '',
         rating: movie.vote_average,
-        poster: movie.poster_path ? `${IMG_URL}${movie.poster_path}` : imgNotFound
+        poster: `${IMG_URL}${movie.poster_path}`
     }));
 }
 
@@ -41,6 +41,7 @@ function sortMovies(movies, sortType) {
   export function searchMovies(state = initialState, action) {
     switch (action.type) {
         case FETCH_MOVIES_SUCCESS:
+        console.log(action);
             return Object.assign({}, state, { foundedMovies: handleMovies(action.payload) });
         case FETCH_MOVIES_ERROR:
             return state;
