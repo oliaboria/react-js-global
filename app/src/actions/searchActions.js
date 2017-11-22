@@ -43,7 +43,7 @@ export function fetchMoviesByName(name) {
 
 export function fetchPopularMovies() {
     return (dispath) => {
-        fetch(`${API_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`)
+        return fetch(`${API_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`)
             .then(checkStatus)
             .then(json => json.json())
             .then(json => dispath(fetchMoviesSuccess(json)))
