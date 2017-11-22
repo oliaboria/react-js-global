@@ -13,7 +13,7 @@ export class SearchHeader extends React.Component {
     render() {
         return (
             <HeaderWrapper>
-                <LogoWithSearchHeader />
+                <LogoWithSearchHeader history={ this.props.history }/>
                 <ToolbarWrapper>
                     <MoviesToolbar moviesNumber={ this.props.moviesNumber } 
                                    selectedSort={ this.props.selectedSort }

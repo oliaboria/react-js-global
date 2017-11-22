@@ -1,4 +1,3 @@
-import history from '../../../utils/history';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -47,8 +46,8 @@ const SearchButton = Button.extend`
 `;
 
 export class SearchForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             query: ''
         };
@@ -56,7 +55,7 @@ export class SearchForm extends React.Component {
 
     submit = (e) => {
         if (this.state.query) {
-            history.push(`/search/${ this.state.query }/`);
+            this.props.history.push(`/search/${ this.state.query }/`);
         }
         
         e.preventDefault();

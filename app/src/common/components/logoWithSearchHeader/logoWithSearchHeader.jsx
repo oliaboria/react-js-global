@@ -16,7 +16,7 @@ export class LogoWithSearchHeader extends React.Component {
                 <LogoWrapper>
                     <Logo/ >
                 </LogoWrapper>
-                <SearchForm />
+                <SearchForm history={ this.props.history }/>
             </HeaderContainer>
         );
     } 

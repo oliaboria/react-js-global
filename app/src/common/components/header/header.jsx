@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import backgroundImg from '../../../assets/img/background.jpg';
+// import backgroundImg from '../../../assets/img/background.jpg';
 import { LIGHT_GREY, DARK_GREY } from '../../constants/colors';
 import { SIDE_PADDING } from '../../constants/dimensions';
 
@@ -9,9 +9,9 @@ export const HeaderWrapper = styled.div`
     width: 100%;
 `;
 
+//background-image: url(${ backgroundImg }); 
 export const HeaderContainer = styled.header`
     min-height: 260px;
-    background-image: url(${ backgroundImg });
     background-color: #606060;
     background-blend-mode: multiply;
     padding: 2vw ${ SIDE_PADDING };
